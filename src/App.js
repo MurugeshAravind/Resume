@@ -7,7 +7,7 @@ function App() {
     <>
       <Image
         className={
-          "float-left m-auto h-auto md:w-60 lg:w-60 w-auto mt-1 ml-1 rounded-lg"
+          "float-left lg:md:w-60 mt-1 ml-1 rounded-md"
         }
         alt={"aravind"}
         src="./aravind.jpg"
