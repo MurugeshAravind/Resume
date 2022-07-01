@@ -8,9 +8,7 @@ const Section = () => {
   }, []);
   const returnArticleData = (articleData, index, key) => {
     if (articleData.length > 0) {
-      console.log(articleData[index][key]);
       return articleData[index][key].map((y, i) => {
-        debugger;
         return (
           <article
             key={i}
