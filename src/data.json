@@ -1,0 +1,72 @@
+[
+  {
+    "Work History 💼": [
+      {
+        "Designation": "Software Engineer",
+        "Company": "Luxoft, India",
+        "Duration": "(Apr,2022 - Till now)",
+        "Responsibilities": [
+          "📌Reviewed project specifications and designed technology solutions that met or exceeded performance expectations.",
+          "📌 Worked with software development and testing team members to design and develop robust solutions to meet client requirements for functionality, scalability and performance."
+        ]
+      },
+      {
+        "Designation": "Senior Associate Consultant",
+        "Company": "Infosys, India",
+        "Duration": "(June,2020 - Apr,2022)",
+        "Responsibilities": [
+          "📌 Worked in RHPAM project were migration of old technology screens to new react UI/UX look and feel was done.",
+          "📌 Monitored and frequently reported on project status to clients and verified projects met client requirements and quality standards."
+        ]
+      },
+      {
+        "Designation": "Software Engineer",
+        "Company": "Amazecodes Solutions Pvt Ltd, Bangalore, India",
+        "Duration": "(June,2018 - March,2020)",
+        "Responsibilities": [
+          "📌 Worked as contractor in Wipro for project called Quantum which deals with business and financial solutions of Wipro.",
+          "📌 Worked in project called HR App which deals with day to day activities of HR in organization."
+        ]
+      },
+      {
+        "Designation": "Configuration Management Engineer",
+        "Company": "Ranstad India / Altran Technologies Pvt Ltd",
+        "Duration": "(November,2015 - May,2018)",
+        "Responsibilities": [
+          "📌 Worked as contractor in Nokia Networks and Solutions as Configuration Management Engineer under payroll of Altran.",
+          "📌 Worked in project called Vodafone and Turk Telekom where we would be making configuration changes as per client requirement using Nokia's Net Act software."
+        ]
+      },
+      {
+        "Designation": "Software Engineer",
+        "Company": "ManpowerGroup Services India Pvt. Ltd., Bangalore, India",
+        "Duration": "(November,2015 - December,2015)",
+        "Responsibilities": [
+          "📌 Worked as Digital Vendor Marketing publisher in digital marketing team in Target India Private Ltd under payroll of Manpower Group Services India Pvt. Ltd."
+        ]
+      }
+    ]
+  },
+  {
+    "Education 🎓": [
+      {
+        "Degree": "Bachelor of Technology: Information Technology",
+        "Institution": "K.S.Rangasamy College of Technology - India",
+        "Duration": "(August,2010 - May,2014)",
+        "Marks": "✔ Completed with CGPA of 7.19"
+      },
+      {
+        "Degree": "Higher Secondary School Leaving Certificate",
+        "Institution": "Sri Vidhya Bharathi Matric Higher Secondary School",
+        "Duration": "(March,2008 - March,2010)",
+        "Marks": "✔ Completed with 88.08% of marks."
+      },
+      {
+        "Degree": "Secondary School Leaving Certificate",
+        "Institution": "Diamond Rays Matric Higher Secondary Schools",
+        "Duration": "(March,2007 - March,2008)",
+        "Marks": "✔ Completed with 78% of marks."
+      }
+    ]
+  }
+]
