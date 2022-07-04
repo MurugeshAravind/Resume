@@ -1,18 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import dataJSON from "../data.json";
 
 const Section = () => {
   const [data, setData] = useState([]);
+  const id = useId();
   useEffect(() => {
     setData(dataJSON);
   }, []);
-  const returnArticleData = (articleData, index, key) => {
-    if (articleData.length > 0) {
-      return articleData[index][key].map((y, i) => {
+  const flattenArray = (input) => {
+    return input.reduce(
+      (acc, cur) => acc.concat(Array.isArray(cur) ? flattenArray(cur) : cur),
+      []
+    );
+  };
+  const returnArticleData = (receivedData, key) => {
+    let articleData = [...new Set(flattenArray(receivedData))];
+    if (articleData && articleData.length > 0) {
+      return articleData.map((y, i) => {
         return (
           <article
-            key={i}
-            className="dark:bg-slate-800 dark:text-gray-300 hover:shadow-slate-500 lg:flex-1 md:flex-0"
+            key={`${id}_${i}`}
+            className="dark:bg-slate-800 dark:text-gray-300 hover:shadow-slate-500"
           >
             <h3 className="text-2xl">
               <strong>
@@ -36,32 +44,24 @@ const Section = () => {
     }
   };
 
-  return (
-    <>
-      <div className=" dark:bg-slate-800">
+  const returnSection = (data) => {
+    return data.map((x, i) => (
+      <div key={`${id}_${i}`}>
         <section>
           <h1 className="text-4xl text-center dark:text-gray-200">
-            Work History 💼
+            {Object.keys(x).toString()}
           </h1>
-          <div className="lg:md:grid lg:md:grid-rows-3 lg:md:grid-flow-col lg:md:gap-10 flex flex-wrap gap-10 p-6">
-            {data.length > 0
-              ? returnArticleData(data, 0, "Work History 💼")
+          <div className="lg:md:grid lg:md:grid-cols-3 flex flex-wrap gap-10 p-6">
+            {Object.keys(x).length > 0
+              ? returnArticleData(Object.values(x), Object.keys(x).toString())
               : null}
           </div>
         </section>
         <hr className="bg-gray-100"></hr>
-        <section className="mt-5">
-          <h1 className="text-4xl text-center dark:text-gray-200">
-            Education 🎓
-          </h1>
-          <div className="lg:md:grid lg:md:grid-rows-2 lg:md:grid-flow-col lg:md:gap-10 flex flex-wrap gap-10 p-6">
-            {data.length > 0
-              ? returnArticleData(data, 1, "Education 🎓")
-              : null}
-          </div>
-        </section>
       </div>
-    </>
-  );
+    ));
+  };
+
+  return <div className=" dark:bg-slate-800">{returnSection(data)}</div>;
 };
 export default Section;
