@@ -4,16 +4,18 @@ import dataJSON from "../data.json";
 const Section = () => {
   const [data, setData] = useState([]);
   const id = useId();
+  // get the initial data from json
   useEffect(() => {
     setData(dataJSON);
   }, []);
+  // Flatten deeply nested array
   const flattenArray = (input) => {
     return input.reduce(
       (acc, cur) => acc.concat(Array.isArray(cur) ? flattenArray(cur) : cur),
       []
     );
   };
-  const returnArticleData = (receivedData, key) => {
+  const returnArticleData = (receivedData) => {
     let articleData = [...new Set(flattenArray(receivedData))];
     if (articleData && articleData.length > 0) {
       return articleData.map((y, i) => {
@@ -22,20 +24,17 @@ const Section = () => {
             key={`${id}_${i}`}
             className="dark:bg-slate-800 dark:text-gray-300 hover:shadow-slate-500"
           >
-            <h3 className="text-2xl">
-              <strong>
-                {key === "Work History 💼" ? y.Designation : y.Degree}
-              </strong>
-            </h3>
-            <h4 className="text-lg">
-              <strong>
-                {key === "Work History 💼" ? y.Company : y.Institution}
-                <span className="italic text-base ml-2">{y.Duration}</span>
-              </strong>
-            </h4>
-            {key === "Work History 💼" &&
-              y.Responsibilities.map((z, id) => <p key={id}>{z}</p>)}
-            {key === "Education 🎓" && y.Marks}
+            {flattenArray(Object.values(y)).map((value, i) => {
+              return (
+                <div key={value}>
+                  <h3>
+                    <strong>
+                      <p className={!i ? "text-2xl italic underline" : "text-lg"}>{value}</p>
+                    </strong>
+                  </h3>
+                </div>
+              );
+            })}
           </article>
         );
       });
@@ -43,7 +42,6 @@ const Section = () => {
       return null;
     }
   };
-
   const returnSection = (data) => {
     return data.map((x, i) => (
       <div key={`${id}_${i}`}>
@@ -53,7 +51,7 @@ const Section = () => {
           </h1>
           <div className="lg:md:grid lg:md:grid-cols-3 flex flex-wrap gap-10 p-6">
             {Object.keys(x).length > 0
-              ? returnArticleData(Object.values(x), Object.keys(x).toString())
+              ? returnArticleData(Object.values(x))
               : null}
           </div>
         </section>
