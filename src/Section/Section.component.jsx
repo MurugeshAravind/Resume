@@ -22,14 +22,18 @@ const Section = () => {
         return (
           <article
             key={`${id}_${i}`}
-            className="dark:bg-slate-800 dark:text-gray-300 hover:shadow-slate-500"
+            className="dark:bg-slate-900 dark:text-gray-300 hover:shadow-slate-500"
           >
             {flattenArray(Object.values(y)).map((value, i) => {
               return (
                 <div key={value}>
                   <h3>
                     <strong>
-                      <p className={!i ? "text-2xl italic underline" : "text-lg"}>{value}</p>
+                      <p
+                        className={!i ? "text-2xl italic underline" : "text-lg"}
+                      >
+                        {value}
+                      </p>
                     </strong>
                   </h3>
                 </div>
@@ -49,7 +53,7 @@ const Section = () => {
           <h1 className="text-4xl text-center dark:text-gray-200">
             {Object.keys(x).toString()}
           </h1>
-          <div className="lg:md:grid lg:md:grid-cols-3 flex flex-wrap gap-10 p-6">
+          <div className="lg:md:grid lg:md:grid-cols-2 flex flex-wrap gap-10 p-6">
             {Object.keys(x).length > 0
               ? returnArticleData(Object.values(x))
               : null}
@@ -60,6 +64,10 @@ const Section = () => {
     ));
   };
 
-  return <div className=" dark:bg-slate-800">{returnSection(data)}</div>;
+  return (
+    <div className=" dark:bg-slate-900">
+      {returnSection(data)}
+    </div>
+  );
 };
 export default Section;
