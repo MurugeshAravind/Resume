@@ -23,6 +23,7 @@ const Header = () => {
   };
   const handleClick = (e) => {
     e.preventDefault();
+    console.log(e)
     const { innerText } = e.target;
     htmlElement.classList.add("scroll-smooth");
     if (innerText === "Work") window.scrollTo(0, 0);
@@ -30,7 +31,7 @@ const Header = () => {
     if (innerText === "Projects") window.scrollTo(0, 1081);
   };
   return (
-    <div className="w-full dark:bg-slate-900 bg-white sticky top-0 z-10">
+    <div className="w-full dark:bg-slate-900 bg-white lg:md:sticky lg:md:top-0 lg:md:z-10">
       <Image
         className={
           "float-left lg:md:w-72 w-auto h-auto lg:md:mt-1 lg:md:ml-1 rounded-md"
