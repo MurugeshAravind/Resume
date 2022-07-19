@@ -1,47 +1,49 @@
 const Navigation = (props) => {
   const handleClick = (event, name) => {
     event.preventDefault();
-    let finalName = name;
+    let finalNameString;
     if (name === "Work")
-      finalName = name.toString().replace("Work", "Work History 💼");
+      finalNameString = name.toString().replace("Work", "Work History 💼");
     if (name === "Education")
-      finalName = name.toString().replace("Education", "Education 🎓");
-    const section = document.getElementById(finalName);
+      finalNameString = name.toString().replace("Education", "Education 🎓");
+    const section = document.getElementById(
+      finalNameString ? finalNameString : name
+    );
     window.scrollTo({
-      top: section?.offsetTop - section?.offsetHeight || 0,
+      top: section?.offsetTop - 30 || 0,
       behavior: "smooth",
     });
-    props.data(finalName) 
+    props.data(name);
   };
   return (
     <nav className="dark:bg-slate-900 bg-white fixed z-10 w-full">
       <ul className="flex space-x-3 hover:cursor-pointer justify-center dark:text-gray-200">
         <li
-          className="text-2xl hover:animate-pulse"
+          className="text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Home")}
         >
           Home
         </li>
         <li
-          className="text-2xl hover:animate-pulse"
+          className="text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Work")}
         >
           Work
         </li>
         <li
-          className="text-2xl hover:animate-pulse"
+          className="text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Education")}
         >
           Education
         </li>
         <li
-          className="text-2xl hover:animate-pulse"
+          className="text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Projects")}
         >
           Projects
         </li>
         <li
-          className="text-2xl hover:animate-pulse"
+          className="text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Top")}
         >
           <svg

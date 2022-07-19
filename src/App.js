@@ -6,14 +6,14 @@ const Section = React.lazy(() => import("./Section/Section.component"));
 const Projects = React.lazy(() => import("./Projects/Projects.component"));
 function App() {
   return (
-    <>
+    <div>
       <Navigation />
       <Suspense fallback={<Loader />}>
         <Header />
         <Section />
         <Projects />
       </Suspense>
-    </>
+    </div>
   );
 }
 

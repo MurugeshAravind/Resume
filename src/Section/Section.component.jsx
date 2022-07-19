@@ -30,7 +30,7 @@ const Section = () => {
                   <h3>
                     <strong>
                       <p
-                        className={!i ? "text-2xl italic underline" : "text-lg"}
+                        className={!i ? "text-2xl underline" : "text-lg"}
                       >
                         {value}
                       </p>
