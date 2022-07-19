@@ -18,31 +18,31 @@ const Navigation = () => {
     <nav className="dark:bg-slate-900 bg-white fixed z-10 w-full">
       <ul className="flex space-x-3 hover:cursor-pointer justify-center dark:text-gray-200">
         <li
-          className="lg:md:sm:text-2xl hover:animate-pulse hover:underline"
+          className="lg:md:text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Home")}
         >
           Home
         </li>
         <li
-          className="lg:md:sm:text-2xl hover:animate-pulse hover:underline"
+          className="lg:md:text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Work")}
         >
           Work
         </li>
         <li
-          className="lg:md:sm:text-2xl hover:animate-pulse hover:underline"
+          className="lg:md:text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Education")}
         >
           Education
         </li>
         <li
-          className="lg:md:sm:text-2xl hover:animate-pulse hover:underline"
+          className="lg:md:text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Projects")}
         >
           Projects
         </li>
         <li
-          className="lg:md:sm:text-2xl hover:animate-pulse hover:underline"
+          className="lg:md:text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Top")}
         >
           <svg
