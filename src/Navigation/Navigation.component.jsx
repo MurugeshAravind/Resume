@@ -16,7 +16,7 @@ const Navigation = () => {
   };
   return (
     <nav className="dark:bg-slate-900 bg-white fixed z-10 w-full">
-      <ul className="flex space-x-3 hover:cursor-pointer justify-center dark:text-gray-200">
+      <ul className="flex hover:cursor-pointer justify-center dark:text-gray-200">
         <li
           className="lg:md:text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Home")}
