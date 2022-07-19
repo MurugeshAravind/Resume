@@ -16,7 +16,7 @@ const Navigation = () => {
   };
   return (
     <nav className="dark:bg-slate-900 bg-white fixed z-10 w-full">
-      <ul className="flex hover:cursor-pointer justify-center dark:text-gray-200">
+      <ul className="flex hover:cursor-pointer space-x-5 justify-center dark:text-gray-200">
         <li
           className="lg:md:text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Home")}
@@ -47,7 +47,7 @@ const Navigation = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 mt-2"
+            className="h-5 w-5 lg:md:mt-2 mt-1"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
