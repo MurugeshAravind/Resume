@@ -1,7 +1,7 @@
 const Projects = () => {
   return (
     <>
-      <h1 className="text-4xl dark:bg-slate-900 dark:text-gray-200 text-center p-5 shadow-lg">Projects</h1>
+      <h1 className="text-4xl dark:bg-slate-900 dark:text-gray-200 text-center p-5 shadow-lg" id="Projects">Projects</h1>
       <div className="flex flex-wrap justify-evenly shadow-md">
         <div className=" dark:bg-slate-900 dark:text-gray-200 border-solid border-2 dark:border-slate-100 shadow-lg flex-auto">
           <h3 className="text-3xl p-5 relative text-center">

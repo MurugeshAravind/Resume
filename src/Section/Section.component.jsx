@@ -50,7 +50,7 @@ const Section = () => {
     return data.map((x, i) => (
       <div key={`${id}_${i}`}>
         <section>
-          <h1 className="text-4xl text-center dark:text-gray-200">
+          <h1 className="text-4xl text-center dark:text-gray-200" id={Object.keys(x).toString()}>
             {Object.keys(x).toString()}
           </h1>
           <div className="lg:md:grid lg:md:grid-cols-2 flex flex-wrap gap-10 p-6">

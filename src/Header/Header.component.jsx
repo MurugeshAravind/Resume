@@ -1,6 +1,5 @@
 import { MailIcon, PhoneIcon, SunIcon, MoonIcon } from "@heroicons/react/solid";
 import { useEffect, useState } from "react";
-import styles from "./Header.component.module.css";
 import Image from "../Image/Image.component";
 const Header = () => {
   const [email, setEmail] = useState("");
@@ -21,25 +20,16 @@ const Header = () => {
     if (!isDarkMode) htmlElement.classList.remove("dark");
     else htmlElement.classList.add("dark");
   };
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log(e)
-    const { innerText } = e.target;
-    htmlElement.classList.add("scroll-smooth");
-    if (innerText === "Work") window.scrollTo(0, 0);
-    if (innerText === "Education") window.scrollTo(0, 711);
-    if (innerText === "Projects") window.scrollTo(0, 1081);
-  };
   return (
-    <div className="w-full dark:bg-slate-900 bg-white lg:md:sticky lg:md:top-0 lg:md:z-10">
+    <div className=" dark:bg-slate-900 bg-white w-full" id="Home">
       <Image
         className={
-          "float-left lg:md:w-72 w-auto h-auto lg:md:mt-1 lg:md:ml-1 rounded-md"
+          "float-left lg:md:w-72 w-auto h-auto lg:md:mt-5 lg:md:ml-1"
         }
         alt={"aravind"}
         src="./aravind.avif"
       />
-      <nav className="dark:text-gray-200 p-9 text-center text-5xl shadow-md font-sans dark:bg-slate-900">
+      <div className="dark:text-gray-200 p-9 text-center text-5xl shadow-md font-sans dark:bg-slate-900">
         <div>
           <h1 className="mb-2 font-mono text-4xl dark:text-gray-100 md:text-6xl">
             hi, I&apos;m <br className="block md:hidden" />
@@ -47,9 +37,6 @@ const Header = () => {
               <span className="h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent">
                 Aravind <span className="text-3xl lg:md:text-5xl">👋</span>
               </span>
-              <span
-                className={`lg:md:${styles.cursor} absolute -bottom-0 left-0 -top-1 inline-block dark:bg-slate-900 bg-white lg:md:w-full animate-type will-change`}
-              ></span>
             </span>
           </h1>
           <div>
@@ -84,20 +71,7 @@ const Header = () => {
             />
           )}
         </div>
-        <>
-          <ul className="flex lg:md:float-right justify-center space-x-3 text-sm hover:cursor-pointer">
-            <li className="text-2xl hover:animate-pulse" onClick={handleClick}>
-              Work
-            </li>
-            <li className="text-2xl hover:animate-pulse" onClick={handleClick}>
-              Education
-            </li>
-            <li className="text-2xl hover:animate-pulse" onClick={handleClick}>
-              Projects
-            </li>
-          </ul>
-        </>
-      </nav>
+      </div>
       <hr className="bg-gray-100"></hr>
     </div>
   );

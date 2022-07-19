@@ -1,13 +1,18 @@
-import React from "react";
-import Header from "./Header/Header.component";
-import Section from "./Section/Section.component";
-import Projects from "./Projects/Projects.component";
+import React, { Suspense } from "react";
+import Navigation from "./Navigation/Navigation.component";
+import Loader from "./Loader/Loader.component";
+const Header = React.lazy(() => import("./Header/Header.component"));
+const Section = React.lazy(() => import("./Section/Section.component"));
+const Projects = React.lazy(() => import("./Projects/Projects.component"));
 function App() {
   return (
     <>
-      <Header />
-      <Section />
-      <Projects />
+      <Navigation />
+      <Suspense fallback={<Loader />}>
+        <Header />
+        <Section />
+        <Projects />
+      </Suspense>
     </>
   );
 }
