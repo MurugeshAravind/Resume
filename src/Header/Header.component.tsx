@@ -3,18 +3,18 @@ import { useEffect, useState } from "react";
 import Image from "../Image/Image.component";
 const Header = () => {
   const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState<number | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const htmlElement = document.getElementsByTagName("html")[0];
   useEffect(() => {
     setEmail("arvindh.balasubramaniam@gmail.com");
     setPhoneNumber(9443763344);
   }, []);
-  const handleMail = (e) => {
+  const handleMail = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     window.open(`mailto:${email}`);
   };
-  const toggleMode = (e) => {
+  const toggleMode = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setIsDarkMode(!isDarkMode);
     if (!isDarkMode) htmlElement.classList.remove("dark");

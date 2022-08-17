@@ -1,5 +1,5 @@
 const Navigation = () => {
-  const handleClick = (event, name) => {
+  const handleClick = (event: any, name: string) => {
     event.preventDefault();
     let finalNameString;
     if (name === "Work")
@@ -9,38 +9,23 @@ const Navigation = () => {
     const section = document.getElementById(
       finalNameString ? finalNameString : name
     );
+    const offsetTop: any = section?.offsetTop;
     window.scrollTo({
-      top: section?.offsetTop - 30 || 0,
+      top: offsetTop - 30 || 0,
       behavior: "smooth",
     });
   };
+  let mainAnchorLinks = ['Home', 'Work', 'Education', 'Projects']
   return (
     <nav className="dark:bg-slate-900 bg-white fixed z-10 w-full">
       <ul className="flex hover:cursor-pointer space-x-5 justify-center dark:text-gray-200">
-        <li
+        {mainAnchorLinks.map((x) => {
+          return <li
+          key={x}
           className="lg:md:text-2xl hover:animate-pulse hover:underline"
-          onClick={(e) => handleClick(e, "Home")}
-        >
-          Home
-        </li>
-        <li
-          className="lg:md:text-2xl hover:animate-pulse hover:underline"
-          onClick={(e) => handleClick(e, "Work")}
-        >
-          Work
-        </li>
-        <li
-          className="lg:md:text-2xl hover:animate-pulse hover:underline"
-          onClick={(e) => handleClick(e, "Education")}
-        >
-          Education
-        </li>
-        <li
-          className="lg:md:text-2xl hover:animate-pulse hover:underline"
-          onClick={(e) => handleClick(e, "Projects")}
-        >
-          Projects
-        </li>
+          onClick={(e) => handleClick(e, x)}
+        >{x}</li>
+        })}
         <li
           className="lg:md:text-2xl hover:animate-pulse hover:underline"
           onClick={(e) => handleClick(e, "Top")}

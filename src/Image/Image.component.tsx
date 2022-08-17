@@ -1,4 +1,4 @@
-const Image = (props) => {
+const Image = (props: { src: string; alt: string; className: string }) => {
   const {src, alt, className} = props
     return <img
       src={src}
